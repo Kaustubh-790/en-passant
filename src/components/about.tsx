@@ -9,14 +9,12 @@ const AboutTimeline = () => {
     offset: ["start end", "end start"],
   });
 
-  // Smooth spring animation for the timeline fill
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
 
-  // Transform scroll progress to timeline height percentage
   const timelineHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   const timelineEvents = [
@@ -76,10 +74,7 @@ const AboutTimeline = () => {
         background: "transparent",
       }}
     >
-      {/* Background Pattern */}
-
       <div className="max-w-6xl mx-auto relative">
-        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -114,12 +109,9 @@ const AboutTimeline = () => {
           </motion.p>
         </motion.div>
 
-        {/* Timeline Container */}
         <div className="relative">
-          {/* Background Timeline Line */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gray-700/50 transform md:-translate-x-0.5 rounded-full" />
 
-          {/* Animated Gold Timeline Fill */}
           <motion.div
             className="absolute left-8 md:left-1/2 top-0 w-1 bg-gradient-to-b from-chess-gold via-chess-gold-light to-chess-gold-dark transform md:-translate-x-0.5 rounded-full shadow-lg"
             style={{
@@ -128,7 +120,6 @@ const AboutTimeline = () => {
             }}
           />
 
-          {/* Timeline Items */}
           <div className="space-y-16">
             {timelineEvents.map((event, index) => (
               <TimelineItem
@@ -152,12 +143,10 @@ const TimelineItem = ({ event, index, totalEvents }) => {
     offset: ["start end", "center center"],
   });
 
-  // Node animation progress
   const nodeProgress = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const nodeScale = useTransform(nodeProgress, [0, 1], [0, 1]);
   const nodeOpacity = useTransform(nodeProgress, [0, 1], [0, 1]);
 
-  // Content animation
   const contentX = useTransform(
     scrollYProgress,
     [0, 0.7],
@@ -165,7 +154,6 @@ const TimelineItem = ({ event, index, totalEvents }) => {
   );
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
 
-  // Special animation for images
   const imageX = useTransform(
     scrollYProgress,
     [0, 0.7],
@@ -183,7 +171,6 @@ const TimelineItem = ({ event, index, totalEvents }) => {
       }`}
       style={{ opacity: contentOpacity }}
     >
-      {/* Enhanced Timeline Node */}
       <motion.div
         className="absolute left-6 md:left-1/2 z-20"
         style={{
@@ -192,7 +179,6 @@ const TimelineItem = ({ event, index, totalEvents }) => {
           opacity: nodeOpacity,
         }}
       >
-        {/* Outer glow ring */}
         <motion.div
           className={`w-8 h-8 rounded-full border-4 border-chess-dark ${
             event.isPresent ? "bg-chess-gold" : "bg-chess-gold-dark"
@@ -219,7 +205,6 @@ const TimelineItem = ({ event, index, totalEvents }) => {
           }
         />
 
-        {/* Inner icon */}
         <motion.div
           className="absolute inset-0 flex items-center justify-center"
           initial={{ rotate: -90, opacity: 0 }}
@@ -230,7 +215,6 @@ const TimelineItem = ({ event, index, totalEvents }) => {
         </motion.div>
       </motion.div>
 
-      {/* Content Card */}
       <motion.div
         className={`ml-16 md:ml-0 md:w-1/2 ${
           event.side === "right" ? "md:pl-8 md:pr-0" : "md:pr-8 md:pl-0"
@@ -254,7 +238,6 @@ const TimelineItem = ({ event, index, totalEvents }) => {
               : "0 25px 50px -12px hsl(var(--chess-gold) / 0.15)",
           }}
         >
-          {/* Card Header */}
           <div className="flex items-center gap-4 mb-6">
             <motion.div
               className={`w-14 h-14 rounded-full flex items-center justify-center ${
@@ -294,7 +277,6 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             </div>
           </div>
 
-          {/* Content */}
           <motion.p
             className="text-gray-300 leading-relaxed mb-6 text-lg"
             initial={{ opacity: 0, y: 20 }}
@@ -305,7 +287,6 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             {event.content}
           </motion.p>
 
-          {/* Tag */}
           <motion.div
             className={`flex items-center gap-3 text-sm ${
               event.isPresent ? "text-amber-300" : "text-amber-400"
@@ -359,12 +340,11 @@ const TimelineItem = ({ event, index, totalEvents }) => {
         </motion.div>
       </motion.div>
 
-      {/* Event Images - Positioned on the opposite side of the card */}
       {event.year === "2022" && (
         <motion.div
           className={`hidden md:flex absolute ${
             event.side === "left" ? "right-0" : "left-0"
-          } top-4 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-lg shadow-2xl z-10`}
+          } top-4 w-40 h-48 md:w-64 md:h-80 overflow-hidden rounded-lg shadow-2xl z-10`}
           style={{
             x: imageX,
             opacity: imageOpacity,
@@ -379,12 +359,12 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             alt="Akshay Sir - Founding Member"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-chess-gold/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           <div className="absolute bottom-2 left-2 right-2 text-center">
-            <p className="text-xs font-montserrat font-semibold text-chess-gold-light">
+            <p className="text-sm font-montserrat font-semibold text-chess-gold-light">
               Akshay Sir
             </p>
-            <p className="text-xs font-montserrat text-gray-300">
+            <p className="text-xs font-montserrat text-gray-200">
               Founding Member
             </p>
           </div>
@@ -395,7 +375,7 @@ const TimelineItem = ({ event, index, totalEvents }) => {
         <motion.div
           className={`hidden md:flex absolute ${
             event.side === "left" ? "right-0" : "left-0"
-          } top-4 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-lg shadow-2xl z-10`}
+          } top-4 w-40 h-48 md:w-64 md:h-80 overflow-hidden rounded-lg shadow-2xl z-10`}
           style={{
             x: imageX,
             opacity: imageOpacity,
@@ -410,12 +390,12 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             alt="CheckUsOut Event"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-chess-gold/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           <div className="absolute bottom-2 left-2 right-2 text-center">
-            <p className="text-xs font-montserrat font-semibold text-chess-gold-light">
+            <p className="text-sm font-montserrat font-semibold text-chess-gold-light">
               CheckUsOut
             </p>
-            <p className="text-xs font-montserrat text-gray-300">
+            <p className="text-xs font-montserrat text-gray-200">
               First Tournament
             </p>
           </div>
@@ -426,7 +406,7 @@ const TimelineItem = ({ event, index, totalEvents }) => {
         <motion.div
           className={`hidden md:flex absolute ${
             event.side === "left" ? "right-0" : "left-0"
-          } top-4 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-lg shadow-2xl z-10`}
+          } top-4 w-40 h-48 md:w-64 md:h-80 overflow-hidden rounded-lg shadow-2xl z-10`}
           style={{
             x: imageX,
             opacity: imageOpacity,
@@ -441,12 +421,12 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             alt="Recruitment Event"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-chess-gold/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           <div className="absolute bottom-2 left-2 right-2 text-center">
-            <p className="text-xs font-montserrat font-semibold text-chess-gold-light">
+            <p className="text-sm font-montserrat font-semibold text-chess-gold-light">
               Recruitment
             </p>
-            <p className="text-xs font-montserrat text-gray-300">
+            <p className="text-xs font-montserrat text-gray-200">
               Community Growth
             </p>
           </div>
@@ -457,7 +437,7 @@ const TimelineItem = ({ event, index, totalEvents }) => {
         <motion.div
           className={`hidden md:flex absolute ${
             event.side === "left" ? "right-0" : "left-0"
-          } top-4 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-lg shadow-2xl z-10`}
+          } top-4 w-40 h-48 md:w-64 md:h-80 overflow-hidden rounded-lg shadow-2xl z-10`}
           style={{
             x: imageX,
             opacity: imageOpacity,
@@ -472,12 +452,12 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             alt="Events & Expansion"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-chess-gold/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           <div className="absolute bottom-2 left-2 right-2 text-center">
-            <p className="text-xs font-montserrat font-semibold text-chess-gold-light">
+            <p className="text-sm font-montserrat font-semibold text-chess-gold-light">
               Events
             </p>
-            <p className="text-xs font-montserrat text-gray-300">
+            <p className="text-xs font-montserrat text-gray-200">
               Strategic Expansion
             </p>
           </div>

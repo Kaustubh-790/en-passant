@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Trophy, Users, BookOpen, Crown } from "lucide-react";
 import CircularGallery from "@/components/carousel";
-import hero from "@/assets/hero.png";
 import { motion } from "framer-motion";
 import SplitText from "../components/gsapText";
 import AboutTimeline from "@/components/about";
@@ -10,44 +9,37 @@ import ContactUs from "@/components/contact";
 const Home = () => {
   const highlightsData = [
     {
-      image:
-        "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=800&h=600&fit=crop&crop=center",
+      image: "/img1.jpg",
       text: "Tournament Victory",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&h=600&fit=crop&crop=center",
+      image: "/img2.jpg",
       text: "Chess Workshop",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop&crop=center",
+      image: "/img3.jpg",
       text: "Master Class",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&crop=center",
+      image: "/img4.jpg",
       text: "Club Meeting",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1528819622765-d6bcf132a442?w=800&h=600&fit=crop&crop=center",
+      image: "/img5.jpg",
       text: "Championship",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1581338834647-b0fb40704e21?w=800&h=600&fit=crop&crop=center",
+      image: "/img6.jpg",
       text: "Strategy Session",
     },
   ];
 
   return (
     <div className="min-h-screen text-foreground">
-      {/* Hero Section */}
       <section
         id="hero"
         className="relative h-screen flex items-center justify-center"
-        style={{ backgroundImage: `url(${hero})` }}
+        style={{ backgroundImage: `url(/hero.png)` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-chess-dark/80 via-chess-dark/60 to-chess-dark/90"></div>
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6 sm:px-8">
@@ -107,12 +99,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
       <section className="py-20 px-4 md:px-8 relative overflow-hidden">
         <AboutTimeline />
       </section>
 
-      {/* Membership Section */}
       <section id="membership" className="py-24 px-6 sm:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h2
@@ -196,7 +186,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Highlights Section */}
       <section id="gallery" className="py-24 px-6 sm:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -214,7 +203,7 @@ const Home = () => {
             </p>
           </motion.div>
           <motion.div
-            className="h-96"
+            className="h-[500px] md:h-[600px] lg:h-[700px]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -233,7 +222,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <ContactUs />
     </div>
   );

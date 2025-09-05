@@ -11,7 +11,6 @@ const ContactUs = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [focusedField, setFocusedField] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -64,41 +63,39 @@ const ContactUs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent relative">
+    <div className="min-h-screen relative overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-white via-yellow-200 to-yellow-400 bg-clip-text text-transparent">
             Get In Touch
           </h1>
-          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6 rounded-full shadow-lg shadow-yellow-400/50"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <div>
-              <h2 className="text-3xl font-bold text-yellow-400 mb-6">
-                Contact Information
-              </h2>
-            </div>
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent mb-6">
+              Contact Information
+            </h2>
 
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="group bg-gray-800 border border-gray-700 hover:border-yellow-400/50 rounded-lg p-6 transition-all duration-300 hover:bg-gray-750"
+                  className="group backdrop-blur-xl bg-white/5 border border-white/10 hover:border-yellow-400/50 rounded-2xl p-6 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:scale-105"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/20 rounded-lg flex items-center justify-center group-hover:bg-yellow-400/20 transition-colors duration-300">
-                      <info.icon className="w-6 h-6 text-yellow-400" />
+                    <div className="w-12 h-12 backdrop-blur-xl bg-yellow-400/10 border border-yellow-400/30 rounded-xl flex items-center justify-center group-hover:bg-yellow-400/20 transition-all duration-300 group-hover:shadow-lg ">
+                      <info.icon className="w-6 h-6 text-yellow-400 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">
+                      <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-yellow-100 transition-colors duration-300">
                         {info.title}
                       </h3>
-                      <p className="text-yellow-400 font-medium mb-1">
+                      <p className="text-yellow-400 font-medium mb-1 group-hover:text-yellow-300 transition-colors duration-300">
                         {info.details}
                       </p>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-gray-300 text-sm group-hover:text-gray-200 transition-colors duration-300">
                         {info.description}
                       </p>
                     </div>
@@ -109,33 +106,33 @@ const ContactUs = () => {
           </div>
 
           <div>
-            <div className="bg-gray-800 border border-gray-700 rounded-xl p-8 shadow-2xl">
+            <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500">
               {isSubmitted ? (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-yellow-400/20 border border-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 backdrop-blur-xl bg-yellow-400/10 border border-yellow-400/30 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                     <CheckCircle className="w-8 h-8 text-yellow-400" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">
                     Message Sent!
                   </h3>
-                  <p className="text-gray-300">
-                    Thank you for reaching out. We'll get back to you soon.
+                  <p className="text-gray-200">
+                    Thank you for reaching out. We&apos;ll get back to you soon.
                   </p>
                 </div>
               ) : (
                 <>
                   <div className="mb-8">
-                    <h2 className="text-2xl font-bold text-yellow-400 mb-2">
+                    <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent mb-2">
                       Send us a Message
                     </h2>
-                    <p className="text-gray-400">
+                    <p className="text-gray-200">
                       Fill out the form below and we'll get back to you
                     </p>
                   </div>
 
                   <div className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
-                      <div className="relative">
+                      <div>
                         <input
                           id="name"
                           name="name"
@@ -143,24 +140,12 @@ const ContactUs = () => {
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          onFocus={() => setFocusedField("name")}
-                          onBlur={() => setFocusedField("")}
-                          className="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-1 focus:ring-yellow-400/20 "
+                          className="w-full backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:border-yellow-400 hover:bg-white/10 focus:bg-white/10 focus:outline-none"
                           placeholder="Full Name"
                         />
-                        <label
-                          htmlFor="name"
-                          className={`absolute -top-2.5 left-3 px-1 text-sm transition-all duration-300 ${
-                            focusedField === "name" || formData.name
-                              ? "text-yellow-400 bg-gray-800"
-                              : "text-transparent"
-                          }`}
-                        >
-                          Full Name *
-                        </label>
                       </div>
 
-                      <div className="relative">
+                      <div>
                         <input
                           id="email"
                           name="email"
@@ -168,50 +153,26 @@ const ContactUs = () => {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          onFocus={() => setFocusedField("email")}
-                          onBlur={() => setFocusedField("")}
-                          className="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-1 focus:ring-yellow-400/20 "
+                          className="w-full backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:border-yellow-400 hover:bg-white/10 focus:bg-white/10 focus:outline-none"
                           placeholder="Email Address"
                         />
-                        <label
-                          htmlFor="email"
-                          className={`absolute -top-2.5 left-3 px-1 text-sm transition-all duration-300 ${
-                            focusedField === "email" || formData.email
-                              ? "text-yellow-400 bg-gray-800"
-                              : "text-transparent"
-                          }`}
-                        >
-                          Email Address *
-                        </label>
                       </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-4">
-                      <div className="relative">
+                      <div>
                         <input
                           id="phone"
                           name="phone"
                           type="tel"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          onFocus={() => setFocusedField("phone")}
-                          onBlur={() => setFocusedField("")}
-                          className="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-1 focus:ring-yellow-400/20 "
+                          className="w-full backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:border-yellow-400 hover:bg-white/10 focus:bg-white/10 focus:outline-none"
                           placeholder="Phone Number"
                         />
-                        <label
-                          htmlFor="phone"
-                          className={`absolute -top-2.5 left-3 px-1 text-sm transition-all duration-300 ${
-                            focusedField === "phone" || formData.phone
-                              ? "text-yellow-400 bg-gray-800"
-                              : "text-transparent"
-                          }`}
-                        >
-                          Phone Number
-                        </label>
                       </div>
 
-                      <div className="relative">
+                      <div>
                         <input
                           id="subject"
                           name="subject"
@@ -219,54 +180,30 @@ const ContactUs = () => {
                           required
                           value={formData.subject}
                           onChange={handleInputChange}
-                          onFocus={() => setFocusedField("subject")}
-                          onBlur={() => setFocusedField("")}
-                          className="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-1 focus:ring-yellow-400/20 "
+                          className="w-full backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:border-yellow-400 hover:bg-white/10 focus:bg-white/10 focus:outline-none"
                           placeholder="Subject"
                         />
-                        <label
-                          htmlFor="subject"
-                          className={`absolute -top-2.5 left-3 px-1 text-sm transition-all duration-300 ${
-                            focusedField === "subject" || formData.subject
-                              ? "text-yellow-400 bg-gray-800"
-                              : "text-transparent"
-                          }`}
-                        >
-                          Subject *
-                        </label>
                       </div>
                     </div>
 
-                    <div className="relative">
+                    <div>
                       <textarea
                         id="message"
                         name="message"
                         required
                         value={formData.message}
                         onChange={handleInputChange}
-                        onFocus={() => setFocusedField("message")}
-                        onBlur={() => setFocusedField("")}
                         rows={5}
-                        className="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-1 focus:ring-yellow-400/20 resize-none"
+                        className="w-full backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:border-yellow-400 resize-none hover:bg-white/10 focus:bg-white/10 focus:outline-none"
                         placeholder="Your Message"
                       />
-                      <label
-                        htmlFor="message"
-                        className={`absolute -top-2.5 left-3 px-1 text-sm transition-all duration-300 ${
-                          focusedField === "message" || formData.message
-                            ? "text-yellow-400 bg-gray-800"
-                            : "text-transparent"
-                        }`}
-                      >
-                        Your Message *
-                      </label>
                     </div>
 
                     <button
                       type="button"
                       onClick={handleSubmit}
                       disabled={isSubmitting}
-                      className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg flex items-center justify-center gap-2"
+                      className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-gray-900 font-semibold py-4 px-6 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 hover:scale-105 backdrop-blur-xl"
                     >
                       {isSubmitting ? (
                         <>
@@ -288,7 +225,7 @@ const ContactUs = () => {
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-gray-400 max-w-3xl mx-auto">
+          <p className="text-gray-200 max-w-3xl mx-auto">
             We typically respond within 24 hours. For urgent matters, please
             call us directly. We look forward to working with you and bringing
             your vision to life.

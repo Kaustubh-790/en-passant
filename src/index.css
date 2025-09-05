@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
-All colors MUST be HSL.
-*/
-
-/* Font Face Declarations */
 @font-face {
   font-family: "Cinzel";
   src: url("./assets/fonts/Cinzel/Cinzel-VariableFont_wght.ttf")
@@ -36,41 +31,36 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Chess Club Premium Theme - Light Mode Base */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 15%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Premium Gold Primary */
     --primary: 45 85% 47%;
-    --primary-foreground: 0 0% 10%;
+    --primary-foreground: 0 0% 5%;
 
-    /* Dark Charcoal Secondary */
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    /* Gold Accent */
     --accent: 45 85% 47%;
-    --accent-foreground: 0 0% 10%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 88%;
+    --border: 0 0% 18%;
 
     --ring: 45 85% 47%;
 
-    /* Premium Chess Theme Colors */
-    --chess-dark: 0 0% 10%;
-    --chess-charcoal: 0 0% 15%;
+    --chess-dark: 0 0% 3%;
+    --chess-charcoal: 0 0% 8%;
     --chess-gold: 45 85% 47%;
     --chess-gold-light: 45 85% 55%;
     --chess-gold-dark: 45 85% 35%;
@@ -78,7 +68,6 @@ All colors MUST be HSL.
     --glass-border: hsl(45 85% 47% / 0.2);
     --glass-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
-    /* Gradients */
     --gradient-hero: linear-gradient(
       135deg,
       hsl(0 0% 10%) 0%,
@@ -97,12 +86,10 @@ All colors MUST be HSL.
       hsl(45 85% 55%) 100%
     );
 
-    /* Shadows */
     --shadow-premium: 0 25px 50px -12px hsl(0 0% 0% / 0.4);
     --shadow-gold-glow: 0 0 30px hsl(45 85% 47% / 0.3);
     --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.2);
 
-    /* Glass morphism effects */
     --glass-bg: hsl(0 0% 10% / 0.1);
     --glass-border: hsl(45 85% 47% / 0.2);
     --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
@@ -120,42 +107,41 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark Chess Club Theme */
-    --background: 0 0% 10%;
+    --background: 0 0% 5%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 15%;
+    --card: 0 0% 8%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 15%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 95%;
 
     --primary: 45 85% 47%;
-    --primary-foreground: 0 0% 10%;
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 0 0% 20%;
+    --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 90%;
 
-    --muted: 0 0% 20%;
+    --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
 
     --accent: 45 85% 47%;
-    --accent-foreground: 0 0% 10%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 25%;
+    --border: 0 0% 18%;
 
     --ring: 45 85% 47%;
 
-    --sidebar-background: 0 0% 10%;
+    --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 45 85% 47%;
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 0 0% 20%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 0 0% 25%;
+    --sidebar-border: 0 0% 18%;
     --sidebar-ring: 45 85% 47%;
   }
 }
@@ -171,43 +157,47 @@ All colors MUST be HSL.
       "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
     background: linear-gradient(
         135deg,
-        hsl(var(--chess-charcoal)) 0%,
-        hsl(var(--chess-dark)) 50%,
+        hsl(0 0% 5%) 0%,
+        hsl(0 0% 8%) 25%,
+        hsl(0 0% 3%) 50%,
+        hsl(0 0% 1%) 75%,
         hsl(0 0% 0%) 100%
       ),
       radial-gradient(
-        circle at 25% 25%,
-        hsl(var(--chess-gold) / 0.03) 0%,
-        transparent 50%
+        ellipse at 20% 20%,
+        hsl(var(--chess-gold) / 0.08) 0%,
+        hsl(var(--chess-gold) / 0.03) 30%,
+        transparent 70%
       ),
       radial-gradient(
-        circle at 75% 75%,
-        hsl(var(--chess-gold) / 0.02) 0%,
-        transparent 50%
+        ellipse at 80% 80%,
+        hsl(var(--chess-gold) / 0.06) 0%,
+        hsl(var(--chess-gold) / 0.02) 40%,
+        transparent 70%
       ),
+      radial-gradient(circle at 50% 50%, hsl(0 0% 2%) 0%, hsl(0 0% 0%) 100%),
       repeating-linear-gradient(
         45deg,
         transparent,
-        transparent 20px,
-        hsl(var(--chess-gold) / 0.01) 20px,
-        hsl(var(--chess-gold) / 0.01) 40px
+        transparent 30px,
+        hsl(var(--chess-gold) / 0.015) 30px,
+        hsl(var(--chess-gold) / 0.015) 60px
       ),
       repeating-linear-gradient(
         -45deg,
         transparent,
-        transparent 20px,
-        hsl(var(--chess-gold) / 0.005) 20px,
-        hsl(var(--chess-gold) / 0.005) 40px
+        transparent 25px,
+        hsl(var(--chess-gold) / 0.008) 25px,
+        hsl(var(--chess-gold) / 0.008) 50px
       );
-    background-size: 100% 100%, 400px 400px, 400px 400px, 40px 40px, 40px 40px;
-    background-position: 0 0, 0 0, 100% 100%, 0 0, 0 0;
+    background-size: 100% 100%, 600px 600px, 500px 500px, 100% 100%, 60px 60px,
+      50px 50px;
+    background-position: 0 0, 0 0, 100% 100%, 0 0, 0 0, 0 0;
     min-height: 100vh;
 
-    /* Hide scrollbar for Chrome, Safari, and Opera */
     -webkit-scrollbar: none;
-    /* Hide scrollbar for IE, Edge, and Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   h1,
@@ -221,16 +211,12 @@ All colors MUST be HSL.
     letter-spacing: -0.02em;
   }
 
-  /* Hide scrollbars globally */
   * {
-    /* Hide scrollbar for Chrome, Safari, and Opera */
     -webkit-scrollbar: none;
-    /* Hide scrollbar for IE, Edge, and Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  /* Ensure all scrollable elements hide scrollbars */
   html,
   body,
   div,
@@ -246,7 +232,6 @@ All colors MUST be HSL.
     scrollbar-width: none;
   }
 
-  /* Custom chess-themed utilities */
   .chess-gradient {
     background: var(--gradient-gold);
   }
@@ -262,25 +247,25 @@ All colors MUST be HSL.
   .glass-nav {
     background: linear-gradient(
       135deg,
-      hsl(0 0% 15% / 0.8) 0%,
-      hsl(0 0% 20% / 0.6) 50%,
-      hsl(45 85% 47% / 0.1) 100%
+      hsl(0 0% 8% / 0.9) 0%,
+      hsl(0 0% 12% / 0.8) 50%,
+      hsl(45 85% 47% / 0.15) 100%
     );
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--glass-border);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-nav:hover {
     background: linear-gradient(
       135deg,
-      hsl(0 0% 15% / 0.9) 0%,
-      hsl(0 0% 25% / 0.7) 50%,
-      hsl(45 85% 47% / 0.15) 100%
+      hsl(0 0% 10% / 0.95) 0%,
+      hsl(0 0% 15% / 0.85) 50%,
+      hsl(45 85% 47% / 0.2) 100%
     );
-    border-bottom-color: hsl(45 85% 47% / 0.3);
+    border-bottom-color: hsl(45 85% 47% / 0.4);
   }
 
   .animate-fade-in {
@@ -304,7 +289,6 @@ All colors MUST be HSL.
     text-shadow: 2px 2px 4px hsl(0 0% 0% / 0.8);
   }
 
-  /* Font Family Classes */
   .font-cinzel {
     font-family: "Cinzel", serif;
   }
@@ -313,7 +297,6 @@ All colors MUST be HSL.
     font-family: "Montserrat", sans-serif;
   }
 
-  /* Enhanced Typography with Custom Fonts */
   .text-display {
     font-family: "Cinzel", serif;
     font-size: clamp(2.5rem, 8vw, 6rem);
@@ -351,7 +334,6 @@ All colors MUST be HSL.
     line-height: 1.5;
   }
 
-  /* Chess-specific typography */
   .chess-heading {
     font-family: "Cinzel", serif;
     font-weight: 600;
@@ -370,7 +352,6 @@ All colors MUST be HSL.
     line-height: 1.5;
   }
 
-  /* Improved text shadows for better readability */
   .text-shadow-strong {
     text-shadow: 0 2px 4px hsl(0 0% 0% / 0.8), 0 4px 8px hsl(0 0% 0% / 0.4);
   }
@@ -379,7 +360,6 @@ All colors MUST be HSL.
     text-shadow: 0 1px 2px hsl(0 0% 0% / 0.6);
   }
 
-  /* Better focus states for accessibility */
   .focus-visible {
     outline: 2px solid hsl(var(--chess-gold));
     outline-offset: 2px;
@@ -397,7 +377,6 @@ All colors MUST be HSL.
   cursor: grabbing;
 }
 
-/* Chess Puzzle Styles */
 .chess-puzzle-board {
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -421,7 +400,6 @@ All colors MUST be HSL.
   }
 }
 
-/* Custom Chess Board Styles */
 .chess-board {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
