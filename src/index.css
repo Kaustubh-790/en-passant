@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Chess Club Premium Theme - Light Mode Base */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Premium Gold Primary */
+    --primary: 45 85% 47%;
+    --primary-foreground: 0 0% 10%;
+
+    /* Dark Charcoal Secondary */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Gold Accent */
+    --accent: 45 85% 47%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 45 85% 47%;
+
+    /* Premium Chess Theme Colors */
+    --chess-dark: 0 0% 10%;
+    --chess-charcoal: 0 0% 15%;
+    --chess-gold: 45 85% 47%;
+    --chess-gold-light: 45 85% 55%;
+    --chess-gold-dark: 45 85% 35%;
+
+    --glass-border: hsl(45 85% 47% / 0.2);
+    --glass-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(0 0% 10%) 0%,
+      hsl(0 0% 15%) 50%,
+      hsl(45 85% 47% / 0.1) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(0 0% 98%) 100%
+    );
+    --gradient-gold: linear-gradient(
+      135deg,
+      hsl(45 85% 35%) 0%,
+      hsl(45 85% 47%) 50%,
+      hsl(45 85% 55%) 100%
+    );
+
+    /* Shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(0 0% 0% / 0.4);
+    --shadow-gold-glow: 0 0 30px hsl(45 85% 47% / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.2);
+
+    /* Glass morphism effects */
+    --glass-bg: hsl(0 0% 10% / 0.1);
+    --glass-border: hsl(45 85% 47% / 0.2);
+    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Chess Club Theme */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 45 85% 47%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 85% 47%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 45 85% 47%;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 45 85% 47%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 45 85% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    -webkit-scrollbar: none;
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Hide scrollbars globally */
+  * {
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    -webkit-scrollbar: none;
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Ensure all scrollable elements hide scrollbars */
+  html,
+  body,
+  div,
+  section,
+  main,
+  aside,
+  article,
+  nav,
+  header,
+  footer {
+    -webkit-scrollbar: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Custom chess-themed utilities */
+  .chess-gradient {
+    background: var(--gradient-gold);
+  }
+
+  .chess-shadow {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .chess-glow {
+    box-shadow: var(--shadow-gold-glow);
+  }
+
+  .glass-nav {
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 15% / 0.8) 0%,
+      hsl(0 0% 20% / 0.6) 50%,
+      hsl(45 85% 47% / 0.1) 100%
+    );
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-nav:hover {
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 15% / 0.9) 0%,
+      hsl(0 0% 25% / 0.7) 50%,
+      hsl(45 85% 47% / 0.15) 100%
+    );
+    border-bottom-color: hsl(45 85% 47% / 0.3);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer components {
+  .hero-text {
+    text-shadow: 2px 2px 4px hsl(0 0% 0% / 0.8);
+  }
+}
+
+.circular-gallery {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.circular-gallery:active {
+  cursor: grabbing;
+}
+
+/* Chess Puzzle Styles */
+.chess-puzzle-board {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.chess-puzzle-board .react-chessboard {
+  border-radius: 12px;
+}
+
+.chess-puzzle-glow {
+  animation: puzzleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes puzzleGlow {
+  from {
+    box-shadow: 0 0 20px hsl(45 85% 47% / 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(45 85% 47% / 0.6);
+  }
+}
+
+/* Custom Chess Board Styles */
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 400px;
+  height: 400px;
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.chess-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.chess-square:hover {
+  background-color: rgba(212, 175, 55, 0.2) !important;
+}
+
+.chess-square.light {
+  background-color: #f0d9b5;
+}
+
+.chess-square.dark {
+  background-color: #2c2c2c;
+}
+
+.chess-piece {
+  font-size: 2.5rem;
+  line-height: 1;
+  user-select: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.chess-piece:hover {
+  transform: scale(1.1);
+}
