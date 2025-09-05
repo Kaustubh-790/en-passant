@@ -1,8 +1,8 @@
-# En Passant Chess Forum - Landing Page Project
+# En Passant Chess Forum - Landing Page
 
 This repository contains the source code for the En Passant Chess Forum landing page, a project developed as part of the web developer selection process. The goal was to create a digital presence that reflects the club's sophisticated and welcoming identity.
 
-### ✨ [View the Live Demo Here](https://your-live-demo-link.vercel.app/) ✨
+### ✨ [View the Live Demo Here](https://en-passant-inky.vercel.app/) ✨
 
 ---
 
