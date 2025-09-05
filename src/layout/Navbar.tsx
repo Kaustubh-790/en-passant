@@ -31,23 +31,27 @@ const Navbar = () => {
             onClick={() => scrollToSection("#hero")}
           >
             <img src="/logo.png" alt="En Passant" width={32} height={32} />
-            <span className="text-xl font-bold text-chess-gold hidden md:block">
+            <span className="text-xl lg:text-2xl font-cinzel font-black text-chess-gold hidden md:block tracking-tight">
               En Passant
             </span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-white hover:text-chess-gold transition-colors duration-200 font-medium relative group"
+                className="text-white hover:text-chess-gold transition-all duration-300 font-montserrat font-semibold text-base lg:text-lg relative group py-2"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-chess-gold transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
-            <Button variant="hero" size="sm">
+            <Button
+              variant="hero"
+              size="lg"
+              className="text-base font-bold px-6 py-2"
+            >
               Join Club
             </Button>
           </div>

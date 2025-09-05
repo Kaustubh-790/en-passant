@@ -71,7 +71,7 @@ const AboutTimeline = () => {
   return (
     <section
       ref={containerRef}
-      className="py-20 px-4 md:px-8 bg-slate-900 relative overflow-hidden min-h-screen"
+      className="py-20 px-4 md:px-8 bg-transparent relative overflow-hidden min-h-screen"
       style={{
         background: "transparent",
       }}
@@ -96,7 +96,7 @@ const AboutTimeline = () => {
           >
             About En Passant
             <motion.div
-              className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"
+              className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-chess-gold to-transparent"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
@@ -104,7 +104,7 @@ const AboutTimeline = () => {
             />
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-300 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-montserrat font-medium"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -121,10 +121,10 @@ const AboutTimeline = () => {
 
           {/* Animated Gold Timeline Fill */}
           <motion.div
-            className="absolute left-8 md:left-1/2 top-0 w-1 bg-gradient-to-b from-amber-400 via-yellow-500 to-amber-600 transform md:-translate-x-0.5 rounded-full shadow-lg"
+            className="absolute left-8 md:left-1/2 top-0 w-1 bg-gradient-to-b from-chess-gold via-chess-gold-light to-chess-gold-dark transform md:-translate-x-0.5 rounded-full shadow-lg"
             style={{
               height: timelineHeight,
-              filter: "drop-shadow(0 0 6px rgba(251, 191, 36, 0.6))",
+              filter: "drop-shadow(0 0 6px hsl(var(--chess-gold) / 0.6))",
             }}
           />
 
@@ -165,6 +165,14 @@ const TimelineItem = ({ event, index, totalEvents }) => {
   );
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
 
+  // Special animation for images
+  const imageX = useTransform(
+    scrollYProgress,
+    [0, 0.7],
+    event.side === "left" ? [100, 0] : [-100, 0]
+  );
+  const imageOpacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
+
   const Icon = event.icon;
 
   return (
@@ -186,16 +194,16 @@ const TimelineItem = ({ event, index, totalEvents }) => {
       >
         {/* Outer glow ring */}
         <motion.div
-          className={`w-8 h-8 rounded-full border-4 border-slate-900 ${
-            event.isPresent ? "bg-amber-400" : "bg-amber-500"
+          className={`w-8 h-8 rounded-full border-4 border-chess-dark ${
+            event.isPresent ? "bg-chess-gold" : "bg-chess-gold-dark"
           }`}
           animate={
             event.isPresent
               ? {
                   boxShadow: [
-                    "0 0 0 0 rgba(251, 191, 36, 0.7)",
-                    "0 0 0 15px rgba(251, 191, 36, 0)",
-                    "0 0 0 0 rgba(251, 191, 36, 0)",
+                    "0 0 0 0 hsl(var(--chess-gold) / 0.7)",
+                    "0 0 0 15px hsl(var(--chess-gold) / 0)",
+                    "0 0 0 0 hsl(var(--chess-gold) / 0)",
                   ],
                 }
               : {}
@@ -218,22 +226,22 @@ const TimelineItem = ({ event, index, totalEvents }) => {
           animate={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
         >
-          <Icon className="w-4 h-4 text-slate-900" />
+          <Icon className="w-4 h-4 text-chess-dark" />
         </motion.div>
       </motion.div>
 
       {/* Content Card */}
       <motion.div
         className={`ml-16 md:ml-0 md:w-1/2 ${
-          event.side === "right" ? "md:pl-8" : "md:pr-8"
+          event.side === "right" ? "md:pl-8 md:pr-0" : "md:pr-8 md:pl-0"
         }`}
         style={{ x: contentX }}
       >
         <motion.div
           className={`rounded-xl shadow-2xl p-8 backdrop-blur-sm border ${
             event.isPresent
-              ? "bg-gradient-to-br from-amber-500/20 via-yellow-500/10 to-amber-600/20 border-amber-400/30"
-              : "bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-slate-700/50"
+              ? "bg-gradient-to-br from-chess-gold/20 via-chess-gold-light/10 to-chess-gold-dark/20 border-chess-gold/30"
+              : "bg-gradient-to-br from-chess-charcoal/80 to-chess-dark/80 border-chess-gold/20"
           }`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -242,8 +250,8 @@ const TimelineItem = ({ event, index, totalEvents }) => {
           whileHover={{
             scale: 1.02,
             boxShadow: event.isPresent
-              ? "0 25px 50px -12px rgba(251, 191, 36, 0.25)"
-              : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              ? "0 25px 50px -12px hsl(var(--chess-gold) / 0.25)"
+              : "0 25px 50px -12px hsl(var(--chess-gold) / 0.15)",
           }}
         >
           {/* Card Header */}
@@ -251,8 +259,8 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             <motion.div
               className={`w-14 h-14 rounded-full flex items-center justify-center ${
                 event.isPresent
-                  ? "bg-amber-400/30 text-amber-300"
-                  : "bg-amber-500/20 text-amber-400"
+                  ? "bg-chess-gold/30 text-chess-gold-light"
+                  : "bg-chess-gold-dark/20 text-chess-gold"
               }`}
               whileHover={{
                 scale: 1.1,
@@ -264,8 +272,8 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             </motion.div>
             <div>
               <motion.h3
-                className={`text-3xl font-bold ${
-                  event.isPresent ? "text-amber-300" : "text-amber-400"
+                className={`text-3xl font-cinzel font-bold ${
+                  event.isPresent ? "text-chess-gold-light" : "text-chess-gold"
                 }`}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -275,7 +283,7 @@ const TimelineItem = ({ event, index, totalEvents }) => {
                 {event.year}
               </motion.h3>
               <motion.p
-                className="text-gray-300 text-lg"
+                className="text-gray-300 text-lg font-montserrat font-medium"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
@@ -350,6 +358,131 @@ const TimelineItem = ({ event, index, totalEvents }) => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      {/* Event Images - Positioned on the opposite side of the card */}
+      {event.year === "2022" && (
+        <motion.div
+          className={`hidden md:flex absolute ${
+            event.side === "left" ? "right-0" : "left-0"
+          } top-4 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-lg shadow-2xl z-10`}
+          style={{
+            x: imageX,
+            opacity: imageOpacity,
+          }}
+          initial={{ opacity: 0, x: event.side === "left" ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="/AkshaySir.png"
+            alt="Akshay Sir - Founding Member"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-chess-gold/20 to-transparent" />
+          <div className="absolute bottom-2 left-2 right-2 text-center">
+            <p className="text-xs font-montserrat font-semibold text-chess-gold-light">
+              Akshay Sir
+            </p>
+            <p className="text-xs font-montserrat text-gray-300">
+              Founding Member
+            </p>
+          </div>
+        </motion.div>
+      )}
+
+      {event.title === "First Event: CheckUsOut" && (
+        <motion.div
+          className={`hidden md:flex absolute ${
+            event.side === "left" ? "right-0" : "left-0"
+          } top-4 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-lg shadow-2xl z-10`}
+          style={{
+            x: imageX,
+            opacity: imageOpacity,
+          }}
+          initial={{ opacity: 0, x: event.side === "left" ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="/CheckUsOut.png"
+            alt="CheckUsOut Event"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-chess-gold/20 to-transparent" />
+          <div className="absolute bottom-2 left-2 right-2 text-center">
+            <p className="text-xs font-montserrat font-semibold text-chess-gold-light">
+              CheckUsOut
+            </p>
+            <p className="text-xs font-montserrat text-gray-300">
+              First Tournament
+            </p>
+          </div>
+        </motion.div>
+      )}
+
+      {event.title === "Growth" && (
+        <motion.div
+          className={`hidden md:flex absolute ${
+            event.side === "left" ? "right-0" : "left-0"
+          } top-4 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-lg shadow-2xl z-10`}
+          style={{
+            x: imageX,
+            opacity: imageOpacity,
+          }}
+          initial={{ opacity: 0, x: event.side === "left" ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="/Recruitment.png"
+            alt="Recruitment Event"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-chess-gold/20 to-transparent" />
+          <div className="absolute bottom-2 left-2 right-2 text-center">
+            <p className="text-xs font-montserrat font-semibold text-chess-gold-light">
+              Recruitment
+            </p>
+            <p className="text-xs font-montserrat text-gray-300">
+              Community Growth
+            </p>
+          </div>
+        </motion.div>
+      )}
+
+      {event.title === "Expansion" && (
+        <motion.div
+          className={`hidden md:flex absolute ${
+            event.side === "left" ? "right-0" : "left-0"
+          } top-4 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-lg shadow-2xl z-10`}
+          style={{
+            x: imageX,
+            opacity: imageOpacity,
+          }}
+          initial={{ opacity: 0, x: event.side === "left" ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="/events.png"
+            alt="Events & Expansion"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-chess-gold/20 to-transparent" />
+          <div className="absolute bottom-2 left-2 right-2 text-center">
+            <p className="text-xs font-montserrat font-semibold text-chess-gold-light">
+              Events
+            </p>
+            <p className="text-xs font-montserrat text-gray-300">
+              Strategic Expansion
+            </p>
+          </div>
+        </motion.div>
+      )}
     </motion.div>
   );
 };

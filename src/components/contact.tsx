@@ -64,7 +64,7 @@ const ContactUs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 relative">
+    <div className="min-h-screen bg-transparent relative">
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">

@@ -1,68 +1,13 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Trophy, Users, BookOpen, Crown } from "lucide-react";
 import CircularGallery from "@/components/carousel";
-import {
-  Trophy,
-  Users,
-  BookOpen,
-  Calendar,
-  Crown,
-  Star,
-  Globe,
-  MessageCircle,
-  Mail,
-  Instagram,
-  Gamepad2,
-} from "lucide-react";
-import heroImage from "@/assets/hero-chess-bg.jpg";
 import hero from "@/assets/hero.png";
 import { motion } from "framer-motion";
 import SplitText from "../components/gsapText";
 import AboutTimeline from "@/components/about";
-import PuzzleOfTheDay from "@/components/puzzles";
 import ContactUs from "@/components/contact";
 
 const Home = () => {
-  const eventsData = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=800&h=600&fit=crop&crop=center",
-      text: "Weekly Tournament",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&h=600&fit=crop&crop=center",
-      text: "Beginner's Workshop",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop&crop=center",
-      text: "Grandmaster Lecture",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&crop=center",
-      text: "Rapid Chess Night",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1528819622765-d6bcf132a442?w=800&h=600&fit=crop&crop=center",
-      text: "Team Championship",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1581338834647-b0fb40704e21?w=800&h=600&fit=crop&crop=center",
-      text: "Puzzle Solving",
-    },
-  ];
-
   const highlightsData = [
     {
       image:
@@ -94,36 +39,27 @@ const Home = () => {
         "https://images.unsplash.com/photo-1581338834647-b0fb40704e21?w=800&h=600&fit=crop&crop=center",
       text: "Strategy Session",
     },
-    {
-      image:
-        "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=800&h=600&fit=crop&crop=center",
-      text: "Award Ceremony",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&h=600&fit=crop&crop=center",
-      text: "Chess Exhibition",
-    },
   ];
 
   return (
-    <div className="min-h-screen bg-chess-dark text-foreground">
+    <div className="min-h-screen text-foreground">
+      {/* Hero Section */}
       <section
         id="hero"
-        className="relative h-screen flex items-center justify-center bg-cover bg-center"
+        className="relative h-screen flex items-center justify-center"
         style={{ backgroundImage: `url(${hero})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-chess-dark/80 via-chess-dark/60 to-chess-dark/90"></div>
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <motion.h1
-            className="text-6xl md:text-8xl font-bold mb-6 hero-text text-chess-gold"
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-6 sm:px-8">
+          <motion.div
+            className="mb-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <SplitText
               text="En Passant"
-              className="text-2xl font-semibold text-center"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl chess-heading font-black text-chess-gold text-center leading-tight tracking-tight"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -134,43 +70,53 @@ const Home = () => {
               rootMargin="-100px"
               textAlign="center"
             />
-          </motion.h1>
+          </motion.div>
+
           <motion.h2
-            className="text-3xl md:text-4xl font-semibold mb-4 hero-text text-white"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-cinzel font-bold mb-6 text-white leading-tight tracking-wide"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Chess Club
+            Chess Forum
           </motion.h2>
+
           <motion.p
-            className="text-xl md:text-2xl mb-8 hero-text text-chess-gold/90 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 text-chess-gold-light max-w-3xl mx-auto leading-relaxed font-montserrat font-medium tracking-wide italic"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Think Ahead. Move Smart. Win Together.
+            Where strategy, friendship, and passion for chess come together.
           </motion.p>
+
           <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Button variant="hero" size="xl" className="animate-scale-in">
-              Join Now
+            <Button
+              variant="hero"
+              size="xl"
+              className="animate-scale-in text-lg font-bold px-10 py-5 rounded-2xl bg-gradient-to-r from-chess-gold-dark via-chess-gold to-chess-gold-light text-chess-dark shadow-lg shadow-chess-gold/30 hover:shadow-chess-gold/50 hover:scale-105 transition-all duration-300"
+            >
+              Join the Club
             </Button>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 px-4 md:px-8 bg-chess-dark relative overflow-hidden">
+      {/* About Section */}
+      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
         <AboutTimeline />
       </section>
 
-      <section id="membership" className="py-20 px-4 md:px-8 bg-chess-charcoal">
-        <div className="max-w-6xl mx-auto text-center">
+      {/* Membership Section */}
+      <section id="membership" className="py-24 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto text-center">
           <motion.h2
-            className="text-4xl font-bold mb-12 text-chess-gold"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-cinzel font-black mb-6 text-chess-gold leading-tight tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -178,11 +124,20 @@ const Home = () => {
           >
             Why Join En Passant?
           </motion.h2>
+          <motion.p
+            className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed font-montserrat font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Discover what makes our chess community extraordinary
+          </motion.p>
           <motion.div
-            className="grid md:grid-cols-4 gap-8 mb-12"
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
             {[
@@ -209,18 +164,22 @@ const Home = () => {
             ].map((perk, index) => (
               <motion.div
                 key={index}
-                className="text-center"
+                className="text-center group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -5 }}
               >
-                <perk.icon className="w-16 h-16 text-chess-gold mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2 text-white">
+                <div className="bg-chess-gold/10 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center group-hover:bg-chess-gold/20 transition-colors duration-300">
+                  <perk.icon className="w-10 h-10 text-chess-gold" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-cinzel font-bold mb-3 text-white group-hover:text-chess-gold transition-colors duration-300">
                   {perk.title}
                 </h3>
-                <p className="text-gray-300">{perk.desc}</p>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-montserrat font-medium">
+                  {perk.desc}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -237,17 +196,23 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="gallery" className="py-20 px-4 md:px-8 bg-chess-dark">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            className="text-4xl font-bold mb-12 text-center text-chess-gold"
+      {/* Highlights Section */}
+      <section id="gallery" className="py-24 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Club Highlights
-          </motion.h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-cinzel font-black mb-6 text-chess-gold leading-tight tracking-tight">
+              Club Highlights
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-montserrat font-medium">
+              Experience the best moments from our chess community
+            </p>
+          </motion.div>
           <motion.div
             className="h-96"
             initial={{ opacity: 0 }}
@@ -268,6 +233,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Contact Section */}
       <ContactUs />
     </div>
   );

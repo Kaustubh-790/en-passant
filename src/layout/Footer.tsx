@@ -23,13 +23,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-chess-dark text-white relative overflow-hidden border-t border-gray-700">
+    <footer className="bg-transparent text-white relative overflow-hidden border-t border-gray-700">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img src="/logo.png" alt="En Passant" width={32} height={32} />
-              <span className="text-2xl font-bold text-chess-gold">
+              <span className="text-2xl font-bold chess-heading text-chess-gold">
                 En Passant
               </span>
             </div>
