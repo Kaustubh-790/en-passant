@@ -52,7 +52,7 @@ const Navbar = () => {
               size="lg"
               className="text-base font-bold px-6 py-2"
             >
-              Join Club
+              Join Forum
             </Button>
           </div>
 
@@ -86,7 +86,7 @@ const Navbar = () => {
               ))}
               <div className="px-3 py-2">
                 <Button variant="hero" size="sm" className="w-full">
-                  Join Club
+                  Join Forum
                 </Button>
               </div>
             </div>

@@ -50,7 +50,7 @@ const AboutTimeline = () => {
       title: "Expansion",
       icon: Calendar,
       content:
-        "More events, workshops, and tournaments. The club expanded its reach with regular competitions, educational sessions, and strategic partnerships across the campus.",
+        "More events, workshops, and tournaments. The Forum expanded its reach with regular competitions, educational sessions, and strategic partnerships across the campus.",
       tag: "Strategic expansion",
       side: "right",
     },
@@ -59,7 +59,7 @@ const AboutTimeline = () => {
       title: "Present & Future",
       icon: Crown,
       content:
-        "This is only the beginning. Many more moves to come. Today, En Passant is more than just a club—it's a thriving community built on camaraderie, learning, and a shared love for the timeless game of chess.",
+        "This is only the beginning. Many more moves to come. Today, En Passant is more than just a Forum—it's a thriving community built on camaraderie, learning, and a shared love for the timeless game of chess.",
       tag: "Infinite possibilities ahead",
       side: "left",
       isPresent: true,

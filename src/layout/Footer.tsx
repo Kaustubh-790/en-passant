@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-400 text-sm">
-              © {currentYear} En Passant Chess Club. All rights reserved.
+              © {currentYear} En Passant Chess Forum. All rights reserved.
             </div>
 
             {/* <div className="flex items-center gap-6 text-sm">

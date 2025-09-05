@@ -87,7 +87,7 @@ const Home = () => {
               size="xl"
               className="animate-scale-in text-lg font-bold px-10 py-5 rounded-2xl bg-gradient-to-r from-chess-gold-dark via-chess-gold to-chess-gold-light text-chess-dark shadow-lg shadow-chess-gold/30 hover:shadow-chess-gold/50 hover:scale-105 transition-all duration-300"
             >
-              Join the Club
+              Join the Forum
             </Button>
           </motion.div>
         </div>
@@ -190,7 +190,7 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-cinzel font-black mb-6 text-chess-gold leading-tight tracking-tight">
-              Club Highlights
+              Forum Highlights
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-montserrat font-medium">
               Experience the best moments from our chess community
