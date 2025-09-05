@@ -10,27 +10,21 @@ const Home = () => {
   const highlightsData = [
     {
       image: "/img1.jpg",
-      text: "Tournament Victory",
     },
     {
       image: "/img2.jpg",
-      text: "Chess Workshop",
     },
     {
       image: "/img3.jpg",
-      text: "Master Class",
     },
     {
       image: "/img4.jpg",
-      text: "Club Meeting",
     },
     {
       image: "/img5.jpg",
-      text: "Championship",
     },
     {
       image: "/img6.jpg",
-      text: "Strategy Session",
     },
   ];
 
@@ -74,7 +68,7 @@ const Home = () => {
           </motion.h2>
 
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 text-chess-gold-light max-w-3xl mx-auto leading-relaxed font-montserrat font-medium tracking-wide italic"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 text-chess-gold-light max-w-3xl mx-auto leading-relaxed font-montserrat font-medium tracking-wide"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -134,7 +128,7 @@ const Home = () => {
               {
                 icon: Trophy,
                 title: "Competitions",
-                desc: "Regular tournaments and ranking system",
+                desc: "Regular tournaments",
               },
               {
                 icon: Users,
@@ -212,9 +206,7 @@ const Home = () => {
             <CircularGallery
               items={highlightsData}
               bend={3}
-              textColor="#D4AF37"
               borderRadius={0.15}
-              font="bold 20px Figtree"
               scrollSpeed={1.2}
               scrollEase={0.06}
             />
