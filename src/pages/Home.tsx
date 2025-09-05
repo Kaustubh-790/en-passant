@@ -38,7 +38,7 @@ const Home = () => {
     <div className="min-h-screen text-foreground">
       <section
         id="hero"
-        className="relative h-screen flex items-center justify-center"
+        className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(/hero.png)` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-chess-dark/80 via-chess-dark/60 to-chess-dark/90"></div>
