@@ -23,7 +23,7 @@ const AboutTimeline = () => {
       title: "Formation",
       icon: Crown,
       content:
-        "En Passant was founded by Akshay Bhaiya and his dedicated team with a simple but powerful vision: to promote the game of chess across our college. What began as a small community of passionate players soon grew into a vibrant forum.",
+        "En Passant was founded by Akshay Sir and his dedicated team with a simple but powerful vision: to promote the game of chess across our college. What began as a small community of passionate players soon grew into a vibrant forum.",
       tag: "First pawn move",
       side: "left",
     },
@@ -459,6 +459,37 @@ const TimelineItem = ({ event, index, totalEvents }) => {
             </p>
             <p className="text-xs font-montserrat text-gray-200">
               Strategic Expansion
+            </p>
+          </div>
+        </motion.div>
+      )}
+
+      {event.title === "Present & Future" && (
+        <motion.div
+          className={`hidden md:flex absolute ${
+            event.side === "left" ? "right-0" : "left-0"
+          } top-4 w-40 h-48 md:w-64 md:h-80 overflow-hidden rounded-lg shadow-2xl z-10`}
+          style={{
+            x: imageX,
+            opacity: imageOpacity,
+          }}
+          initial={{ opacity: 0, x: event.side === "left" ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="/future.jpg"
+            alt="Events & Expansion"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute bottom-2 left-2 right-2 text-center">
+            <p className="text-sm font-montserrat font-semibold text-chess-gold-light">
+              Endgame
+            </p>
+            <p className="text-xs font-montserrat text-gray-200">
+              Planning The Future
             </p>
           </div>
         </motion.div>

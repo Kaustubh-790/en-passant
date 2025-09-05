@@ -56,10 +56,9 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
       transition={{ duration: 1.0, ease: "easeInOut" }}
     >
       <div className="relative z-10 text-center">
-        {/* Logo */}
         <motion.div
           className="mb-8"
-          initial={{ scale: 0, rotate: -180 }}
+          initial={{ scale: 0, rotate: 0 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
