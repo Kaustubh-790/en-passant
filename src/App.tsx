@@ -8,7 +8,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import LoadingScreen from "@/components/LoadingScreen";
 import { Layout } from "./layout";
 import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -42,8 +41,6 @@ const App = () => {
                 <Layout>
                   <Routes>
                     <Route path="/" element={<Home />} />
-                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                    <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Layout>
               </motion.div>
