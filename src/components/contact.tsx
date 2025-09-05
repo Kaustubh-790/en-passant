@@ -51,8 +51,8 @@ const ContactUs = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+91 94527 33181",
-      description: "Mon-Fri, 9am to 6pm",
+      details: "+91 XXXXX XXXXX",
+      description: "Mon-Fri",
     },
     {
       icon: MapPin,
@@ -222,14 +222,6 @@ const ContactUs = () => {
               )}
             </div>
           </div>
-        </div>
-
-        <div className="text-center mt-16">
-          <p className="text-gray-200 max-w-3xl mx-auto">
-            We typically respond within 24 hours. For urgent matters, please
-            call us directly. We look forward to working with you and bringing
-            your vision to life.
-          </p>
         </div>
       </div>
     </div>
