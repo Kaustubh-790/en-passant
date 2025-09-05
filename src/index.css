@@ -37,7 +37,7 @@ All colors MUST be HSL.
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 88%;
-    --input: 0 0% 88%;
+
     --ring: 45 85% 47%;
 
     /* Premium Chess Theme Colors */
@@ -118,7 +118,7 @@ All colors MUST be HSL.
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 25%;
-    --input: 0 0% 25%;
+
     --ring: 45 85% 47%;
 
     --sidebar-background: 0 0% 10%;

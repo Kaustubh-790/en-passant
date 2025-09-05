@@ -8,9 +8,7 @@ const Navbar = () => {
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#events", label: "Events" },
-    { href: "#membership", label: "Membership" },
     { href: "#gallery", label: "Gallery" },
-    { href: "#resources", label: "Resources" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -26,7 +24,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-1 sm:px-1 lg:px-1">
         <div className="flex items-center justify-between h-16">
           <div
             className="flex items-center gap-3 cursor-pointer"
