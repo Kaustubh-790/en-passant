@@ -1,4 +1,4 @@
-import { Crown, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { AnimatedSocialIcon } from "@/components/animatedSocialIcons";
 
 const Footer = () => {
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <Crown className="w-8 h-8 text-chess-gold" />
+              <img src="/logo.png" alt="En Passant" width={32} height={32} />
               <span className="text-2xl font-bold text-chess-gold">
                 En Passant
               </span>
