@@ -1,3 +1,5 @@
+![Screenshot](https://i.ibb.co/r2ccd8Yq/image-removebg-preview.png)
+
 # En Passant Chess Forum - Landing Page
 
 This repository contains the source code for the En Passant Chess Forum landing page, a project developed as part of the web developer selection process. The goal was to create a digital presence that reflects the Forum's sophisticated and welcoming identity.
@@ -10,7 +12,7 @@ This repository contains the source code for the En Passant Chess Forum landing 
 
 Below is a preview of the landing page design.
 
-![En Passant Landing Page Preview]
+(![Screenshot](https://i.ibb.co/3m6LDwpY/en-passant.png))
 
 ---
 
