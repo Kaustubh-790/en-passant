@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -7,7 +7,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "#about", label: "About" },
-    { href: "#events", label: "Events" },
+    { href: "#membership", label: "Membership" },
     { href: "#gallery", label: "Gallery" },
     { href: "#contact", label: "Contact" },
   ];
@@ -18,6 +18,14 @@ const Navbar = () => {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
+  };
+
+  const openJoinForm = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLScGNwb9aNCxe4ukzgMoNV1_DLwHa_cPrbMkUX7IJGn-1Wtm6w/viewform?usp=dialog",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
@@ -41,7 +49,7 @@ const Navbar = () => {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-white hover:text-chess-gold transition-all duration-300 font-montserrat font-semibold text-base lg:text-lg relative group py-2"
+                className="text-white hover:text-chess-gold transition-all duration-300 text-body text-base lg:text-lg relative group py-2"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-chess-gold transition-all duration-300 group-hover:w-full"></span>
@@ -50,7 +58,8 @@ const Navbar = () => {
             <Button
               variant="hero"
               size="lg"
-              className="text-base font-bold px-6 py-2"
+              className="btn-gold hover:shadow-lg px-6 py-2"
+              onClick={openJoinForm}
             >
               Join Forum
             </Button>
@@ -85,7 +94,12 @@ const Navbar = () => {
                 </button>
               ))}
               <div className="px-3 py-2">
-                <Button variant="hero" size="sm" className="w-full">
+                <Button
+                  variant="hero"
+                  size="sm"
+                  className="w-full"
+                  onClick={openJoinForm}
+                >
                   Join Forum
                 </Button>
               </div>

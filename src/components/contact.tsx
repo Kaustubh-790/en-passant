@@ -203,7 +203,7 @@ const ContactUs = () => {
                       type="button"
                       onClick={handleSubmit}
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-gray-900 font-semibold py-4 px-6 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 hover:scale-105 backdrop-blur-xl"
+                      className="w-full btn-gold hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 hover:scale-105 backdrop-blur-xl"
                     >
                       {isSubmitting ? (
                         <>

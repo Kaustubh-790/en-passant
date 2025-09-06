@@ -8,25 +8,21 @@ import ContactUs from "@/components/contact";
 
 const Home = () => {
   const highlightsData = [
-    {
-      image: "/img1.jpg",
-    },
-    {
-      image: "/img2.jpg",
-    },
-    {
-      image: "/img3.jpg",
-    },
-    {
-      image: "/img4.jpg",
-    },
-    {
-      image: "/img5.jpg",
-    },
-    {
-      image: "/img6.jpg",
-    },
+    { image: "/img1.jpg" },
+    { image: "/img2.jpg" },
+    { image: "/img3.jpg" },
+    { image: "/img4.jpg" },
+    { image: "/img5.jpg" },
+    { image: "/img6.jpg" },
   ];
+
+  const openJoinForm = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLScGNwb9aNCxe4ukzgMoNV1_DLwHa_cPrbMkUX7IJGn-1Wtm6w/viewform?usp=dialog",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   return (
     <div className="min-h-screen text-foreground">
@@ -63,12 +59,10 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Chess Forum
-          </motion.h2>
+          ></motion.h2>
 
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 text-chess-gold-light max-w-3xl mx-auto leading-relaxed font-montserrat font-medium tracking-wide"
+            className="text-lg sm:text-xl pt-4 md:text-2xl lg:text-3xl mb-12 text-white max-w-3xl mx-auto leading-relaxed font-cinzel font-medium tracking-wide"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -85,7 +79,8 @@ const Home = () => {
             <Button
               variant="hero"
               size="xl"
-              className="animate-scale-in text-lg font-bold px-10 py-5 rounded-2xl bg-gradient-to-r from-chess-gold-dark via-chess-gold to-chess-gold-light text-chess-dark shadow-lg shadow-chess-gold/30 hover:shadow-chess-gold/50 hover:scale-105 transition-all duration-300"
+              className="btn-gold hover:shadow-lg"
+              onClick={openJoinForm}
             >
               Join the Forum
             </Button>
@@ -93,7 +88,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
+      <section
+        id="about"
+        className="py-20 px-4 md:px-8 relative overflow-hidden"
+      >
         <AboutTimeline />
       </section>
 
@@ -173,7 +171,7 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            <Button variant="premium" size="xl">
+            <Button variant="premium" size="xl" onClick={openJoinForm}>
               Become a Member
             </Button>
           </motion.div>
@@ -214,7 +212,9 @@ const Home = () => {
         </div>
       </section>
 
-      <ContactUs />
+      <section id="contact" className="py-24 px-6 sm:px-8 lg:px-12">
+        <ContactUs />
+      </section>
     </div>
   );
 };

@@ -377,20 +377,6 @@
   cursor: grabbing;
 }
 
-.chess-puzzle-board {
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-}
-
-.chess-puzzle-board .react-chessboard {
-  border-radius: 12px;
-}
-
-.chess-puzzle-glow {
-  animation: puzzleGlow 2s ease-in-out infinite alternate;
-}
-
 @keyframes puzzleGlow {
   from {
     box-shadow: 0 0 20px hsl(45 85% 47% / 0.3);
@@ -400,47 +386,46 @@
   }
 }
 
-.chess-board {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  width: 400px;
-  height: 400px;
-  border: 2px solid #d4af37;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.chess-square {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.btn-gold {
+  background: linear-gradient(135deg, #b59530 0%, #d4af37 50%, #f4cf47 100%);
+  border: none;
+  color: #1a1a1a;
+  font-weight: 650;
+  padding: 16px 32px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
-.chess-square:hover {
-  background-color: rgba(212, 175, 55, 0.2) !important;
+.btn-gold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
-.chess-square.light {
-  background-color: #f0d9b5;
+.btn-gold:hover::before {
+  left: 100%;
 }
 
-.chess-square.dark {
-  background-color: #2c2c2c;
+.btn-gold:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #f4cf47 50%, #ffdf5d 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
 }
 
-.chess-piece {
-  font-size: 2.5rem;
-  line-height: 1;
-  user-select: none;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease;
-}
-
-.chess-piece:hover {
-  transform: scale(1.1);
+.btn-gold:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
 }

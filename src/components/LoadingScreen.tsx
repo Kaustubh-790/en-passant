@@ -80,15 +80,6 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           </span>
         </motion.h1>
 
-        <motion.p
-          className="text-lg text-gray-300 mb-12 font-montserrat"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          Think Ahead. Move Smart. Win Together.
-        </motion.p>
-
         <motion.div
           className="mb-8"
           initial={{ opacity: 0 }}
