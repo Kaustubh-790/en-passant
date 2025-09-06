@@ -1,8 +1,8 @@
-![Screenshot](https://i.ibb.co/r2ccd8Yq/image-removebg-preview.png)
+<img src="https://i.ibb.co/r2ccd8Yq/image-removebg-preview.png" alt="En Passant Logo" width="100" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 # En Passant Chess Forum - Landing Page
 
-This repository contains the source code for the En Passant Chess Forum landing page, a project developed as part of the web developer selection process. The goal was to create a digital presence that reflects the Forum's sophisticated and welcoming identity.
+This repository contains the source code for the En Passant Chess Forum landing page, a project developed as part of the web developer selection process. The goal was to create a landing page for the forum.
 
 ### ✨ [View the Live Demo Here](https://en-passant-inky.vercel.app/) ✨
 
@@ -12,35 +12,39 @@ This repository contains the source code for the En Passant Chess Forum landing 
 
 Below is a preview of the landing page design.
 
-(![Screenshot](https://i.ibb.co/3m6LDwpY/en-passant.png))
+<img src="https://i.ibb.co/3m6LDwpY/en-passant.png" alt="Project Screenshot" width="400" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 ---
 
-### 🎯 Project Overview
+### 📖 Project Overview
 
-## A landing page that captures the strategic spirit of the En Passant Chess Forum
+## A landing page for En Passant Chess Forum
 
-### 🚀 Key Features
+### 🌟 Key Features
 
 - **Elegant Hero Section:** A strong, welcoming introduction with a clear call-to-action to engage visitors immediately.
 - **Visual History Timeline:** An interactive and visually engaging timeline that showcases the Forum's milestones and history.
 - **Clear Value Proposition:** A dedicated section that concisely outlines the benefits and reasons for joining the community.
 - **Community Highlights Gallery:** A photo gallery that offers an authentic glimpse into the Forum's vibrant atmosphere and members.
-- **Functional Contact Form:** An intuitive and easy-to-use form for prospective members to make inquiries.
 - **Fully Responsive Design:** The layout is meticulously crafted to ensure a seamless experience on all devices, from mobile phones to widescreen desktops.
 
 ---
 
 ### 🛠️ Technology Stack
 
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Frameworks:** React, Tailwind CSS,
-  GSAP for animations, custom icons,etc
-- **Deployment:** Vercel
+<p align="left">
+  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/typescript-%233178C6.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React"/>
+  <img src="https://img.shields.io/badge/tailwindcss-%2306B6D4.svg?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS"/>
+  <img src="https://img.shields.io/badge/greensock-%2388CE02.svg?style=for-the-badge&logo=greensock&logoColor=white" alt="GSAP"/>
+  <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
+</p>
 
 ---
 
-### 🔧 Getting Started Locally
+### 🚀 Getting Started Locally
 
 To get a local copy up and running for development or testing, follow these simple steps.
 
